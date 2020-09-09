@@ -2,27 +2,6 @@ import java.io.*;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Constructor;
 
-interface Registro {
-	public int getID();
-	public void setID(int n);
-	public byte[] toByteArray() throws IOException;
-	public void fromByteArray(byte[] ba) throws IOException;
-}
-
-class CRUD<T> extends Registro {
-	RandomAccessFile arq;
-
-	public CRUD(Constructor<T> construtor, String filename ) throws Exception {
-		arq = new RandomAccessFile(filename, "rw");
-	}
-}
-
-class Livro implements Produto {
-	private int idLivro;
-	private String titulo,autor;
-	private float preco;
-}
-
 public class Teste {
 
 	// Arquivo declarado fora de main() para ser poder ser usado por outros métodos
@@ -30,17 +9,17 @@ public class Teste {
 
 	public static void main(String[] args) {
 
-		/* Livros de exemplo
+		 //Livros de exemplo
 		   Livro l1 = new Livro(-1, "Eu, Robô", "Isaac Asimov", 14.9F);
 		   Livro l2 = new Livro(-1, "Eu Sou A Lenda", "Richard Matheson", 21.99F);
 		   Livro l3 = new Livro(-1, "Número Zero", "Umberto Eco", 34.11F);
-		   int id1, id2, id3; */
+		   int id1, id2, id3;
 
 		try {
 
 			// Abre (cria) o arquivo de livros
 			new File("livros.db").delete();  // apaga o arquivo anterior
-			arqLivros = new Generic_CRUD<>(Livro.class.getConstructor(), "livros.db");
+			arqLivros = new CRUD<>(Livro.class.getConstructor(), "livros.db");
 
 			// Insere os três livros
 			id1 = arqLivros.create(l1); 
@@ -66,7 +45,7 @@ public class Teste {
 
 			// Excluir um livro e mostra que não existe mais
 			arqLivros.delete(id3);
-			Livro l = arqLivros.read(id3);
+			Registro l = arqLivros.read(id3);
 			if(l==null)
 				System.out.println("Livro excluído");
 			else
