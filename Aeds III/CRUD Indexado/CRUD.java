@@ -9,6 +9,8 @@ class CRUD <T extends Registro> {
         this.file = filename;
         this.constructor = constructor;
         RandomAccessFile arq;
+        HashExtensivel he = new HashExtensivel(4, filename+".diretorio.idx", filename+".cestos.idx");
+        ArvoreBMais_String_int ab = new ArvoreBMais_String_int(4, filename+"arvore.idx"); 
 
         try {
             arq = new RandomAccessFile(this.file, "rw");
@@ -35,6 +37,10 @@ class CRUD <T extends Registro> {
         short tam = (short)ba.length;
         //escrever no fim do arquivo
         arq.seek(arq.length());
+        //guardar o endereço do novo registro
+        long adress = arq.getFilePointer();
+        he.create(proxID, adress);
+        ab.create(chaveSecundaria(), proxID);
         //escrever o byte de lapide
         arq.writeByte(' ');
         //escrever o tamanho do registro
@@ -49,21 +55,30 @@ class CRUD <T extends Registro> {
 
         RandomAccessFile arq = new RandomAccessFile(this.file, "r");
         T objeto = this.constructor.newInstance();
-        arq.seek(4);
-         
-            while(arq.getFilePointer() < arq.length()){
-                byte lapide = arq.readByte();
-                short tam = arq.readShort();
-                byte[] ba = new byte[tam];
-                arq.read(ba);
-                objeto.fromByteArray(ba);
-                if(lapide == ' ' && id == objeto.getID())
-                {
-                    arq.close();
-                    return objeto;
-                }
-            }
+        //encontrar o registro no indice secundario
+        long adress = he.read(id);
+        arq.seek(adress);
+        byte lapide = arq.readByte();
+        short tam = arq.readShort();
+        byte[] ba = new byte[tam];
+        arq.read(ba);
+        objeto.fromByteArray(ba);
+        if(lapide == ' ' && id == objeto.getID())
+        {
+            arq.close();
+            return objeto;
+        }
         arq.close();
+        return null;
+    }
+
+    public T read(String key) throws Exception{
+        //buscar no indice secundario
+        int chave = ab.read(key);
+        //se encontrado, buscar no indice primario
+        if(chave != -1) {
+            return (read(chave));
+        }
         return null;
     }
 
@@ -107,6 +122,14 @@ class CRUD <T extends Registro> {
     }
 
     public boolean delete(int id) throws Exception{
+
+        //remover no indice secundario
+        ab.delete(key);
+        //se encontrado, buscar no indice primario
+        if(chave != -1) {
+            return (read(chave));
+        }
+        return null;
 
         RandomAccessFile arq = new RandomAccessFile(this.file, "rw");
         T objeto = constructor.newInstance();
