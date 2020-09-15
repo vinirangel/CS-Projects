@@ -67,10 +67,6 @@ class CRUD <T extends Registro> {
         return null;
     }
 
-    public T read(String key) throws Exception{
-        
-    }
-
     public boolean update(T novoObjeto) throws Exception {
 
         RandomAccessFile arq = new RandomAccessFile(this.file, "rw");
