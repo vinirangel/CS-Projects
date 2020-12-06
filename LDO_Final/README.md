@@ -135,7 +135,7 @@ Um [exploit](https://www.kaspersky.com.br/blog/exploits-problem-explanation/6010
 ## Hora de praticar !
 ### Algumas falhas comuns
 
-- Information disclosure
+#### Information disclosure
 
 [A divulgação de informações](https://portswigger.net/web-security/information-disclosure), também conhecida como vazamento de informações, ocorre quando um site da Web revela, sem querer, informações confidenciais a seus usuários. Dependendo do contexto, os sites podem vazar todos os tipos de informações para um invasor potencial, incluindo:
 
@@ -152,7 +152,7 @@ Um [exploit](https://www.kaspersky.com.br/blog/exploits-problem-explanation/6010
 
 [![Watch the video](https://img.youtube.com/vi/Vlyx_GpL3Sg/0.jpg)](https://youtu.be/Nmlo5qj-G3g)
 
-- Business logic vulnerabilities
+#### Business logic vulnerabilities
 
 [Vulnerabilidades de lógica](https://portswigger.net/web-security/logic-flaws) de negócios são falhas no design e na implementação de um aplicativo que permitem que um invasor elicie um comportamento indesejado. Isso potencialmente permite que os invasores manipulem funcionalidades legítimas para atingir um objetivo malicioso. Essas falhas são geralmente o resultado da falha em antecipar os estados incomuns do aplicativo que podem ocorrer e, conseqüentemente, da falha em lidar com eles com segurança.
 
@@ -165,7 +165,7 @@ Um [exploit](https://www.kaspersky.com.br/blog/exploits-problem-explanation/6010
 
 [![Watch the video](https://img.youtube.com/vi/Nmlo5qj-G3g/0.jpg)](https://www.youtube.com/watch?v=Vlyx_GpL3Sg)
 
-- Cross-site scripting
+#### Cross-site scripting
 
 [Cross-site scripting](https://portswigger.net/web-security/cross-site-scripting) (também conhecido como XSS) é uma vulnerabilidade de segurança da Web que permite que um invasor comprometa as interações que os usuários têm com um aplicativo vulnerável. Ele permite que um invasor contorne a política de mesma origem, que é projetada para separar sites diferentes uns dos outros. As vulnerabilidades de script entre sites normalmente permitem que um invasor se disfarce de usuário vítima, execute quaisquer ações que o usuário seja capaz de realizar e acesse quaisquer dados do usuário. Se o usuário vítima tiver acesso privilegiado dentro do aplicativo, o invasor poderá obter controle total sobre todas as funcionalidades e dados do aplicativo.
 
@@ -178,7 +178,7 @@ Um [exploit](https://www.kaspersky.com.br/blog/exploits-problem-explanation/6010
 
 [![Watch the video](https://img.youtube.com/vi/iOm_gsdVHpU/0.jpg)](https://youtu.be/iOm_gsdVHpU)
 
-- SQL injection
+#### SQL injection
 
 [A injeção de SQL](https://portswigger.net/web-security/sql-injection) é uma vulnerabilidade de segurança da web que permite que um invasor interfira nas consultas que um aplicativo faz ao seu banco de dados. Geralmente, permite que um invasor visualize dados que normalmente não é capaz de recuperar. Isso pode incluir dados pertencentes a outros usuários ou quaisquer outros dados que o próprio aplicativo é capaz de acessar. Em muitos casos, um invasor pode modificar ou excluir esses dados, causando alterações persistentes no conteúdo ou comportamento do aplicativo.
 
