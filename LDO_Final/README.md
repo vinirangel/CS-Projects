@@ -46,7 +46,7 @@ Os servidores [DNS](https://www.youtube.com/embed/oukRwnVAamo?start=13&end=113) 
 
 Imagine ter que acessar seus sites preferidos através de números de [IP (Internet Protocol)](https://canaltech.com.br/internet/o-que-e-dns/), memorizando sequências de números para cada um deles. Conseguiríamos acessar meia dúzia deles no máximo, mais ou menos a mesma quantidade de números de telefone que conseguimos memorizar, não é?
 
-![DNS](;/img/dns.png)
+![DNS](./img/dns.png)
 
 #### WWW
 
@@ -145,7 +145,7 @@ Um [exploit](https://www.kaspersky.com.br/blog/exploits-problem-explanation/6010
 
 ![infodis](././img/information-disclosure-.jpg)
 
-[[!] Acesse o laboratório](https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-in-error-messages)
+[Acesse o laboratório](https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-in-error-messages)
 
 **Solução**
 
@@ -158,7 +158,7 @@ Um [exploit](https://www.kaspersky.com.br/blog/exploits-problem-explanation/6010
 
 ![Apache](././img/logic.jpg)
 
-[[!] Acesse o laboratório](https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-excessive-trust-in-client-side-controls)
+[Acesse o laboratório](https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-excessive-trust-in-client-side-controls)
 
 **Solução**
 
@@ -171,7 +171,7 @@ Um [exploit](https://www.kaspersky.com.br/blog/exploits-problem-explanation/6010
 
 ![xss](././img/xss.svg)
 
-[[!] Acesse o laboratório](https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded)
+[ Acesse o laboratório](https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded)
 
 **Solução**
 
@@ -184,7 +184,7 @@ Um [exploit](https://www.kaspersky.com.br/blog/exploits-problem-explanation/6010
 
 ![xss](././img/sql-injection.svg)
 
-[[!] Acesse o laboratório](https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data)
+[Acesse o laboratório](https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data)
 
 **Solução**
 
